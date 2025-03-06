@@ -18,4 +18,9 @@ return {
             })
         end,
     },
+    {
+        "kylechui/nvim-surround",
+        event = "VeryLazy",
+        opts = {},
+    },
 }
