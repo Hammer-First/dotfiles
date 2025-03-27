@@ -48,16 +48,16 @@ opt.foldenable = false
 local my_filetype = require("core.filetype")
 vim.api.nvim_create_augroup("vimrc_augroup", {})
 vim.api.nvim_create_autocmd("FileType", {
-    group = "vimrc_augroup",
-    pattern = "*",
-    callback = function(args)
-        -- args.match に対応するファイルタイプ関数が存在するか確認
-        local filetype_func = my_filetype[args.match]
-        if filetype_func then
-            filetype_func()
-        else
-            -- デフォルトのインデント設定（例: 4スペース）を設定
-            my_filetype.default()
-        end
-    end,
+	group = "vimrc_augroup",
+	pattern = "*",
+	callback = function(args)
+		-- args.match に対応するファイルタイプ関数が存在するか確認
+		local filetype_func = my_filetype[args.match]
+		if filetype_func then
+			filetype_func()
+		else
+			-- デフォルトのインデント設定（例: 4スペース）を設定
+			my_filetype.default()
+		end
+	end,
 })
