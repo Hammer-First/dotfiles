@@ -26,15 +26,12 @@ return {
 	},
 	{
 		-- カーソル移動用のプラグイン
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		---@type Flash.Config
-		opts = {},
-        -- stylua: ignore
-        keys = {
-            { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-            { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-            { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-        },
+		"hadronized/hop.nvim",
+		branch = "v2",
+		opts = function()
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+			vim.keymap.set("n", "s", ":HopWord<CR>")
+			vim.keymap.set("n", "<Leader>s", ":HopLineStart<CR>")
+		end,
 	},
 }
