@@ -41,7 +41,7 @@ fi
 # SSH_AGENT_PIDが空（エージェントが未起動）の場合のみエージェントを起動し、鍵を追加する
 if [ -z "$SSH_AGENT_PID" ]; then
     eval "$(ssh-agent -s)" >/dev/null 2>&1
-    if [ -f ~/.environments ]; then
+    if [ -f ~/.ssh/id_ed25519 ]; then
         ssh-add ~/.ssh/id_ed25519
     fi
 fi
