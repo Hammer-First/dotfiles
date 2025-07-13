@@ -107,7 +107,7 @@ fi
 # Cargoの設定（Rust）
 # -------------------------------------
 
-if [ -f ~/.cargo/env ]; then
+if [ -f ~/.carge/env ]; then
   . "$HOME/.local/bin/env"
   . "$HOME/.cargo/env"
 fi
@@ -125,6 +125,7 @@ fi
 # Node.jsの管理ツール
 # -------------------------------------
 export NVM_DIR="$HOME/.nvm"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
