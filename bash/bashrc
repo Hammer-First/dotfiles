@@ -90,8 +90,10 @@ fi
 # Cargoの設定（Rust）
 # -------------------------------------
 
-. "$HOME/.local/bin/env"
-. "$HOME/.cargo/env"
+if [ -f ~/.cargo/env ]; then
+  . "$HOME/.local/bin/env"
+  . "$HOME/.cargo/env"
+fi
 
 # -------------------------------------
 # fzfの設定
