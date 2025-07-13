@@ -134,3 +134,11 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # 既存のOSSパッケージを便利に使えるように拡張したパッケージ
 # -------------------------------------
 [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
+
+# -------------------------------------
+# uvの設定
+# Pythonの仮想環境とパッケージの管理ツール
+# -------------------------------------
+eval "$(uv generate-shell-completion bash)"
+eval "$(uvx --generate-shell-completion bash)"
+export PATH="$HOME/.local/bin:$PATH"
