@@ -54,7 +54,7 @@ shopt -s checkwinsize
 
 # lessコマンドでバイナリや圧縮ファイルを適切に処理するようにする
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-#
+
 # コマンドの色情報の設定
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -64,6 +64,23 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+fi
+
+# -------------------------------------
+# OSの判定
+# -------------------------------------
+os=$(uname -s)
+
+if [[ "$os" == "Linux" ]]; then
+  echo "Linux detected"
+elif [[ "$os" == "Darwin" ]]; then
+  echo "macOS detected"
+elif [[ "$os" == "FreeBSD" ]]; then
+  echo "FreeBSD detected"
+elif [[ "$os" == "MINGW"* ]]; then
+  echo "Windows (MSYS2/Cygwin) detected"
+else
+  echo "Unknown OS: $os"
 fi
 
 
