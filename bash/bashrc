@@ -74,7 +74,7 @@ os=$(uname -s)
 if [[ "$os" == "Linux" ]]; then
   echo "Linux detected"
 elif [[ "$os" == "Darwin" ]]; then
-  echo "macOS detected"
+  . ~/dotfiles/bash/macrc
 elif [[ "$os" == "FreeBSD" ]]; then
   echo "FreeBSD detected"
 elif [[ "$os" == "MINGW"* ]]; then

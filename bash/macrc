@@ -1,0 +1,1 @@
+alias fr-ubuntu='ssh -i ~/.ssh/id_rsa hammer-first@192.168.0.111'
